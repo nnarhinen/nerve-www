@@ -1,0 +1,46 @@
+.jumbotron,
+html,
+body {
+  height: 100%;
+}
+.jumbotron {
+  background-image: url("/site/static/img/jumbotronbg.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  position: relative;
+}
+.jumbotron .brand {
+  font-family: 'Dancing Script', cursive;
+  color: #333;
+  position: absolute;
+  top: 15px;
+  font-size: 48px;
+  padding: 10px 20px;
+}
+.jumbotron h1 {
+  text-align: right;
+}
+.jumbotron .bottom {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  text-align: center;
+}
+.jumbotron .bottom a {
+  color: #fff;
+  text-shadow: 0px 2px 3px #333;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -ms-transition: 0.3s;
+  transition: 0.3s;
+}
+.jumbotron .bottom a:hover {
+  color: #ccc;
+}
+h2.brand {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3em;
+}

@@ -1,0 +1,35 @@
+jumbotronBrandColor=#333
+.jumbotron, html, body
+  height 100%
+.jumbotron
+  background-image url('/site/static/img/jumbotronbg.jpg')
+  background-size cover
+  position relative
+  .brand
+    //font-family: 'Crafty Girls', cursive;
+    //font-family: 'Roboto', sans-serif;
+    font-family 'Dancing Script', cursive
+    color jumbotronBrandColor
+    position absolute
+    top 15px
+    font-size 48px
+    padding 10px 20px
+    //border 2px solid jumbotronBrandColor
+    //border-radius 5px
+  h1
+    text-align right
+  .bottom
+    position absolute
+    bottom 0px
+    left 0px
+    right 0px
+    text-align center
+    a
+      color #fff
+      text-shadow 0px 2px 3px #333
+      transition 0.3s
+      &:hover
+        color #ccc
+h2.brand
+  font-family 'Dancing Script', cursive
+  font-size 3em
