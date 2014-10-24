@@ -30,6 +30,7 @@ body {
 }
 .jumbotron h1 {
   text-align: right;
+  text-shadow: 0px 0px 1px #ccc;
 }
 .jumbotron .bottom {
   position: absolute;
