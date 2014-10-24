@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Melli</title>
     <link rel="icon" href="/img/favicon.png">
     <link href='//fonts.googleapis.com/css?family=Dancing+Script:700' rel='stylesheet' type='text/css'>
@@ -16,26 +17,37 @@
       Sähköpostiosoitteesi on tallennettu! Kiitos mielenkiinnostasi.
     </div>
     {% endif %}
-    <div class="jumbotron">
+    <div id="top" class="jumbotron">
       <p class="brand">Melli</p>
       <a class="login" href="#">Kirjaudu sisään</a>
       <h1>Keskity olennaiseen</h1>
       <div class="bottom">
-        <a href="#more">
-          <i class="fa fa-arrow-down fa-4x"></i>
+        <a data-scroll href="#more">
+          <i class="fa fa-angle-down fa-5x"></i>
         </a>
       </div>
     </div>
     <nav class="navbar navbar-default" role="navigation">
       <div class="container-fluid">
-        <ul class="nav navbar-nav">
-          <li><a href="#more">Johdanto</a></li>
-          <li><a href="#features">Toiminnot</a></li>
-          <li><a href="#pricing">Hinnoittelu</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a class="login" href="#">Kirjaudu sisään / Aloita käyttö</a></li>
-        </ul>
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a data-scroll class="navbar-brand" href="#top">Melli</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a data-scroll href="#more">Johdanto</a></li>
+            <li><a data-scroll href="#features">Toiminnot</a></li>
+            <li><a data-scroll href="#pricing">Hinnoittelu</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a class="login" href="#">Kirjaudu sisään / Aloita käyttö</a></li>
+          </ul>
+        </div>
       </div>
     </nav>
     <div class="container">
@@ -116,6 +128,7 @@
     </div>
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="/site/static/js/smooth-scroll.min.js"></script>
     <script>
     $(function() {
       $('.login').on('click', function(ev) {
@@ -134,6 +147,9 @@
           }
         }
       });
+    });
+    smoothScroll.init({
+      offset: 66
     });
     </script>
   </body>
