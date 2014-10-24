@@ -3,12 +3,22 @@ html,
 body {
   height: 100%;
 }
+body {
+  position: relative;
+}
 .jumbotron {
   background-image: url("/site/static/img/jumbotronbg.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   position: relative;
+  margin-bottom: 0px;
+}
+.jumbotron .login {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  color: #333;
 }
 .jumbotron .brand {
   font-family: 'Dancing Script', cursive;
@@ -43,4 +53,30 @@ body {
 h2.brand {
   font-family: 'Dancing Script', cursive;
   font-size: 3em;
+}
+.navbar.navbar-default.affix {
+  background-color: rgba(51,51,51,0.9);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 10;
+}
+#more.affix-top {
+  height: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+#more.affix {
+  height: 60px;
+  margin-top: 8px;
+  position: static;
+}
+.alert.alert-success {
+  position: absolute;
+  z-index: 10;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: rgba(67,172,106,0.9);
 }

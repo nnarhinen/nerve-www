@@ -1,10 +1,18 @@
 jumbotronBrandColor=#333
 .jumbotron, html, body
   height 100%
+body
+  position relative
 .jumbotron
   background-image url('/site/static/img/jumbotronbg.jpg')
   background-size cover
   position relative
+  margin-bottom 0px
+  .login
+    position absolute
+    top 15px
+    right 25px
+    color #333
   .brand
     //font-family: 'Crafty Girls', cursive;
     //font-family: 'Roboto', sans-serif;
@@ -33,3 +41,26 @@ jumbotronBrandColor=#333
 h2.brand
   font-family 'Dancing Script', cursive
   font-size 3em
+.navbar.navbar-default.affix
+  background-color rgba(#333, 0.9)
+  position fixed
+  top 0px
+  left 0px
+  right 0px
+  z-index 10
+#more.affix-top
+  height 0px
+  margin 0px
+  padding 0px
+#more.affix
+  height 60px
+  margin-top 8px
+  position static
+
+.alert.alert-success
+  position absolute
+  z-index 10
+  top 0px
+  left 0px
+  right 0px
+  background-color rgba(#43ac6a, 0.9)

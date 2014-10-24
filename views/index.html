@@ -8,11 +8,17 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/yeti/bootstrap.min.css">
     <link rel="stylesheet" href="/site/static/css/default.css">
-    <script src="/static/vendor/pdfjs-1.0.473-dist/build/pdf.js"></script>
   </head>
-  <body>
+  <body data-spy="scroll" data-target=".navbar-default">
+    {% if thankyou %}
+    <div class="alert alert-success">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      Sähköpostiosoitteesi on tallennettu! Kiitos mielenkiinnostasi.
+    </div>
+    {% endif %}
     <div class="jumbotron">
       <p class="brand">Melli</p>
+      <a class="login" href="#">Kirjaudu sisään</a>
       <h1>Keskity olennaiseen</h1>
       <div class="bottom">
         <a href="#more">
@@ -20,8 +26,20 @@
         </a>
       </div>
     </div>
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <ul class="nav navbar-nav">
+          <li><a href="#more">Johdanto</a></li>
+          <li><a href="#features">Toiminnot</a></li>
+          <li><a href="#pricing">Hinnoittelu</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a class="login" href="#">Kirjaudu sisään / Aloita käyttö</a></li>
+        </ul>
+      </div>
+    </nav>
     <div class="container">
-      <a id="more"></a>
+      <p id="more">&nbsp;</p>
       <h2 class="text-center">Sähköinen taloushallinto yrittäjälle, joka arvostaa vapaa-aikaansa</h2>
       <p class="text-center">
         <button class="btn btn-primary btn-large">Aloita käyttö vaikka heti!</button><br>
@@ -56,6 +74,67 @@
           <img alt="Niklas" style="width: 100%" src="/site/static/img/niklas.jpg">
         </div>
       </div>
+      <h2 id="features">Toiminnot</h2>
+      <p>
+        Lorem ipsum
+      </p>
+      <h2 id="pricing">Hinnoittelu</h2>
+      <p>
+      </p>
     </div>
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Sulje</span></button>
+            <h4 class="modal-title">Hups..</h4>
+          </div>
+          <div class="modal-body">
+            <p>
+              Kiitos mielenkiinnosta Melliä kohtaan!
+            </p>
+            <p>
+              Melli ei ihan vielä ole valmis julkisen yleisön käyttöön. Jos olet kiinnostunut koekäyttämään ensimmäisten joukossa, jätäthän sähköpostiosoitteesi alla olevaan laatikkoon.
+              Saat sähköpostiisi kirjautumisohjeet mahdollisimman pian.
+            </p>
+            <form method="post" action="/subscribe">
+              <div class="form-group">
+                <input type="email" name="email" id="fe-email" placeholder="Sähköpostiosoitteesi tähän" class="form-control">
+              </div>
+            </form>
+            <p>
+              <small>Sähköpostiasi käytetään ainoastaan Melliin liittyvien asioiden tiedottamiseen.</small>
+            </p>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default btn-primary btn-send-email">Lähetä</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Ei kiitos</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script>
+    $(function() {
+      $('.login').on('click', function(ev) {
+        ev.preventDefault();
+        $('#login-modal').modal();
+      });
+      $('.btn-send-email').on('click', function(ev) {
+        ev.preventDefault();
+        $('#login-modal form').submit();
+      });
+      var jumbotron = $('.jumbotron');
+      $('.navbar-default,#more').affix({
+        offset: {
+          top: function() {
+            return jumbotron.outerHeight();
+          }
+        }
+      });
+    });
+    </script>
   </body>
 </html>
