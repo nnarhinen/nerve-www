@@ -33,7 +33,7 @@ body {
 }
 .jumbotron .bottom {
   position: absolute;
-  bottom: 0px;
+  bottom: 10px;
   left: 0px;
   right: 0px;
   text-align: center;
@@ -88,4 +88,22 @@ h2.brand {
   left: 0px;
   right: 0px;
   background-color: rgba(67,172,106,0.9);
+}
+.btn.login {
+  margin: 15px;
+}
+.row {
+  margin-top: 20px;
+}
+.intro,
+.pricing,
+.features {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.intro {
+  background-color: #eee;
+}
+.pricing {
+  background-color: #a6d785;
 }
