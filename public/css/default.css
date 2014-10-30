@@ -53,6 +53,11 @@ body {
   display: inline-block;
   -webkit-border-radius: 40px;
   border-radius: 40px;
+  -webkit-animation: pulsate-shadow 1s infinite alternate;
+  -moz-animation: pulsate-shadow 1s infinite alternate;
+  -o-animation: pulsate-shadow 1s infinite alternate;
+  -ms-animation: pulsate-shadow 1s infinite alternate;
+  animation: pulsate-shadow 1s infinite alternate;
 }
 .jumbotron .bottom a:hover {
   color: #ccc;
@@ -107,4 +112,44 @@ h2.brand {
 }
 .pricing {
   background-color: #a6d785;
+}
+@-moz-keyframes pulsate-shadow {
+  from {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  to {
+    -webkit-box-shadow: 0 0 10px #4682b4;
+    box-shadow: 0 0 10px #4682b4;
+  }
+}
+@-webkit-keyframes pulsate-shadow {
+  from {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  to {
+    -webkit-box-shadow: 0 0 10px #4682b4;
+    box-shadow: 0 0 10px #4682b4;
+  }
+}
+@-o-keyframes pulsate-shadow {
+  from {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  to {
+    -webkit-box-shadow: 0 0 10px #4682b4;
+    box-shadow: 0 0 10px #4682b4;
+  }
+}
+@keyframes pulsate-shadow {
+  from {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  to {
+    -webkit-box-shadow: 0 0 10px #4682b4;
+    box-shadow: 0 0 10px #4682b4;
+  }
 }

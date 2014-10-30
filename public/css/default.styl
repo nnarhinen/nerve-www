@@ -42,8 +42,14 @@ body
       height 80px
       display inline-block
       border-radius 40px
+      animation pulsate-shadow 1s infinite alternate
       &:hover
         color #ccc
+@keyframes pulsate-shadow
+  from
+    box-shadow none
+  to
+    box-shadow 0 0 10px #4682B4
 h2.brand
   font-size 3em
 .brand,.navbar-brand
