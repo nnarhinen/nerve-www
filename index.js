@@ -28,7 +28,7 @@ app.get('/', function(req, res, next) {
   });
 });
 
-app.post('/subscribe', bodyParser.urlencoded(), function(req, res, next) {
+app.post('/subscribe', bodyParser.urlencoded({extended: true}), function(req, res, next) {
   if (!req.body.email) return res.redirect('/');
   mailgun(process.env.MAILGUN_API_KEY).mailingList('beta@melli.fi').addMember({
     address: req.body.email,
